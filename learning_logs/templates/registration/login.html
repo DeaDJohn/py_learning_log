@@ -1,0 +1,18 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+    {% if form.error %}
+        <p>Tu usuario y contraseña no concuerdan.Intentalo de nuevo.</p>
+    {% endif %}
+
+    <div class="flex justify-between items-start mb-10 pt-10 ">
+        <h1 class="text-5xl mb-6 font-semibold">Login</h1>
+    </div>
+    <form action="{% url 'users:login' %}" method="post">
+        {% csrf_token  %}
+        {{ form.as_p }}
+        <button class="bg-lime-500 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded mt-5" name="submit">Loguearte</button>
+        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+    </form>
+
+{% endblock content %}

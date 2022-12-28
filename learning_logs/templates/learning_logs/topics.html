@@ -1,0 +1,19 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+  <div class="flex justify-between items-start mb-10 pt-10 ">
+    <h1 class="text-5xl mb-6 font-semibold">Temas</h1>
+    <a class="bg-lime-500 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded" href="{% url 'learning_logs:new_topic' %}">Añadir nuevo tema</a>
+  </div>
+  <ul>
+  {% for topic in topics %}
+    <li>
+      <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+    </li>
+  {% empty %}
+    
+    <li>No hay temas aun creados.</li>
+  {% endfor %}
+  </ul>
+{% endblock content %}

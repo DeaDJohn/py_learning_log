@@ -1,0 +1,12 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+    <h1 class="text-5xl py-10 mb-6 font-semibold"> Añadir un nuevo tema: </h1>
+
+    <form action="{% url 'learning_logs:new_topic' %}" method="post">
+        {% csrf_token  %}
+        {{ form.as_p }}
+        <button class="bg-lime-500 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded" name="submit">Añadir tema</button>
+    </form>
+
+{% endblock content %}
