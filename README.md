@@ -1,3 +1,3 @@
-# PYTHON API SHOP
+# PYTHON LEARNING LOG
 
-Proyecto para aprender hacer una api con python.py
+Proyecto para aprender Django - Python
